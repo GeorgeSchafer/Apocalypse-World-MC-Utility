@@ -8,9 +8,9 @@ Renaming branches
 $ git branch -m OLD-BRANCH-NAME NEW-BRANCH-NAME
 
 Branch Naming Convention
-fixing - fix/feature-being-worked-on
-test   - tst/feature-being-worked-on
-done   - dne/feature-being-worked-on
+fixing - fix/feature-being-worked-onDDMMYYYY
+test   - tst/feature-being-worked-onDDMMYYYY
+done   - dne/feature-being-worked-onDDMMYYYY
 
 Deleting branches, local
 $ git branch -d BRANCH-NAME
