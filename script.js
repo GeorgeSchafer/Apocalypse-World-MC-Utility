@@ -149,23 +149,22 @@ const Functions = {
     displayMove: (e) => {
       e.preventDefault();
 
-      const newElement = document.querySelector(`#${Elements.basicMoves.selector.value}`);
-
-      if (Elements.basicMoves.currentElement === null) {
-        Elements.basicMoves.currentElement = newElement;
-        Elements.basicMoves.currentElement.classList.toggle("hidden");
+      const basicMoves = Elements.basicMoves;
+      
+      if (basicMoves.currentElement !== null) {
+        basicMoves.currentElement.classList.add("hidden");
       }
-      else {
-        Elements.basicMoves.currentElement.classList.toggle("hidden");
-        Elements.basicMoves.currentElement = newElement;
-        Elements.basicMoves.currentElement.classList.toggle("hidden");
-      }
+      
+      basicMoves.currentElement = document.querySelector(`#${basicMoves.selector.value}`);
+      basicMoves.currentElement.classList.remove("hidden");
     },
     clearMove: (e) => {
       e.preventDefault();
+      
+      const basicMoves = Elements.basicMoves;
 
-      Elements.basicMoves.currentElement?.classList.toggle("hidden");
-      Elements.basicMoves.currentElement = null;
+      basicMoves.currentElement?.classList.toggle("hidden");
+      basicMoves.currentElement = null;
     }
   }
 };
