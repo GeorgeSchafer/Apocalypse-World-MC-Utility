@@ -81,8 +81,12 @@ const Listeners = {
     Elements.calculateHarm.submitHarm.addEventListener("click", (e) => { Functions.calculateHarm(e) })
   ],
   basicMoves: [
-    Elements.basicMoves.showButton.addEventListener("click", (e) => { Functions.basicMoves.displayMove(e) }),
-    Elements.basicMoves.clearButton.addEventListener("click", (e) => { Functions.basicMoves.clearMove(e) })
+    Elements.basicMoves.showButton.addEventListener("click", (e) => { 
+      Functions.basicMoves.displayMove(e) 
+    }),
+    Elements.basicMoves.clearButton.addEventListener("click", (e) => { 
+      Functions.basicMoves.clearMove(e) 
+    })
   ]
 };
 
@@ -151,9 +155,7 @@ const Functions = {
 
       const basicMoves = Elements.basicMoves;
       
-      if (basicMoves.currentElement !== null) {
-        basicMoves.currentElement.classList.add("hidden");
-      }
+      basicMoves.currentElement?.classList.add("hidden");
       
       basicMoves.currentElement = document.querySelector(`#${basicMoves.selector.value}`);
       basicMoves.currentElement.classList.remove("hidden");
